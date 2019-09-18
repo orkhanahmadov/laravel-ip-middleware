@@ -1,0 +1,55 @@
+{
+    "name": "orkhanahmadov/laravel-ip-middleware",
+    "description": "Laravel middleware for whitelisting incoming client IP addresses",
+    "keywords": [
+        "orkhanahmadov",
+        "laravel",
+        "middleware",
+        "ip-filter",
+        "ip-whitelist",
+        "laravel-ip-middleware"
+    ],
+    "homepage": "https://github.com/orkhanahmadov/laravel-ip-middleware",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Orkhan Ahmadov",
+            "email": "ahmadov90@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/http": "5.5.*|5.8.*|^6.0",
+        "illuminate/support": "5.5.*|5.8.*|^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "3.5.*|3.8.*|^4.0",
+        "phpunit/phpunit": "^6.0|^7.0|^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Orkhanahmadov\\LaravelIpMiddleware\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Orkhanahmadov\\LaravelIpMiddleware\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Orkhanahmadov\\LaravelIpMiddleware\\LaravelIpMiddlewareServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
