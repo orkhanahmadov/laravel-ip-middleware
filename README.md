@@ -44,6 +44,19 @@ Route::middleware('ip_whitelist:1.1.1.1,2.2.2.2')->get('/', 'HomeController@inde
 
 This will block all requests where client IP not matching whitelisted IP list.
 
+## Configuration
+
+Run this command to publish package config file:
+
+```bash
+php artisan vendor:publish --provider="Orkhanahmadov\LaravelIpMiddleware\LaravelIpMiddlewareServiceProvider"
+```
+
+`ip-middleware.php` config file contains following settings:
+
+* `ignore_environments` - Middleware ignores IP checking when application is running in listed environments.
+* `error_code` - HTTP code that shown when request gets rejected.
+
 ### Testing
 
 ``` bash
