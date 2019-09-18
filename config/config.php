@@ -12,5 +12,5 @@ return [
 
     'ignore_environments' => [
         'local',
-    ]
+    ],
 ];
