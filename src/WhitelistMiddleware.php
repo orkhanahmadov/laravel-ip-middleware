@@ -5,7 +5,6 @@ namespace Orkhanahmadov\LaravelIpMiddleware;
 use Closure;
 use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Foundation\Application;
 
@@ -45,8 +44,8 @@ class WhitelistMiddleware
     {
         $clientIp = $request->server('HTTP_CF_CONNECTING_IP') ?? $request->ip();
 
-        if (!$this->application->environment($this->config->get('ip-middleware.ignore_environments')) &&
-            !in_array($clientIp, Arr::flatten($allowedIp))
+        if (! $this->application->environment($this->config->get('ip-middleware.ignore_environments')) &&
+            ! in_array($clientIp, Arr::flatten($allowedIp))
         ) {
             abort($this->config->get('ip-middleware.error_code'));
         }
