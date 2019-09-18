@@ -22,6 +22,7 @@ class IpMiddleware
 
     /**
      * IpMiddleware constructor.
+     *
      * @param Application $application
      * @param Repository $config
      */
@@ -37,12 +38,15 @@ class IpMiddleware
      * @param Request $request
      * @param Closure $next
      * @param array $allowedIp
+     *
      * @return mixed
      */
     public function handle($request, Closure $next, ...$allowedIp)
     {
+        $clientIp = $request->server('HTTP_CF_CONNECTING_IP') ?? $request->ip();
+
         if (! $this->application->environment($this->config->get('ip-middleware.ignore_environments')) &&
-            !in_array($request->ip(), Arr::flatten($allowedIp))
+            ! in_array($clientIp, Arr::flatten($allowedIp))
         ) {
             abort(Response::HTTP_FORBIDDEN);
         }

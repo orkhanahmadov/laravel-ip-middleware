@@ -19,14 +19,4 @@ class TestCase extends Orchestra
             LaravelIpMiddlewareServiceProvider::class,
         ];
     }
-
-    /**
-     * Set up the environment.
-     *
-     * @param Application $app
-     */
-    protected function getEnvironmentSetUp($app)
-    {
-        $app['config']->set('database.default', 'testing');
-    }
 }
