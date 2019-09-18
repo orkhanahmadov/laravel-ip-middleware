@@ -1,12 +1,13 @@
 {
     "name": "orkhanahmadov/laravel-ip-middleware",
-    "description": "Laravel middleware for whitelisting incoming client IP addresses",
+    "description": "Laravel middleware for whitelisting/blacklisting client IP addresses",
     "keywords": [
         "orkhanahmadov",
         "laravel",
         "middleware",
         "ip-filter",
         "ip-whitelist",
+        "ip-blacklist",
         "laravel-ip-middleware"
     ],
     "homepage": "https://github.com/orkhanahmadov/laravel-ip-middleware",
