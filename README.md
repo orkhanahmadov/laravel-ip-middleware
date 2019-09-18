@@ -1,11 +1,15 @@
-# Very short description of the package
+# WIP
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/orkhanahmadov/laravel-ip-middleware.svg?style=flat-square)](https://packagist.org/packages/orkhanahmadov/laravel-ip-middleware)
-[![Build Status](https://img.shields.io/travis/orkhanahmadov/laravel-ip-middleware/master.svg?style=flat-square)](https://travis-ci.org/orkhanahmadov/laravel-ip-middleware)
-[![Quality Score](https://img.shields.io/scrutinizer/g/orkhanahmadov/laravel-ip-middleware.svg?style=flat-square)](https://scrutinizer-ci.com/g/orkhanahmadov/laravel-ip-middleware)
-[![Total Downloads](https://img.shields.io/packagist/dt/orkhanahmadov/laravel-ip-middleware.svg?style=flat-square)](https://packagist.org/packages/orkhanahmadov/laravel-ip-middleware)
+[![Latest Stable Version](https://poser.pugx.org/orkhanahmadov/laravel-ip-middleware/v/stable)](https://packagist.org/packages/orkhanahmadov/laravel-ip-middleware)
+[![Latest Unstable Version](https://poser.pugx.org/orkhanahmadov/laravel-ip-middleware/v/unstable)](https://packagist.org/packages/orkhanahmadov/laravel-ip-middleware)
+[![Total Downloads](https://img.shields.io/packagist/dt/orkhanahmadov/laravel-ip-middleware)](https://packagist.org/packages/orkhanahmadov/laravel-ip-middleware)
+[![License](https://img.shields.io/github/license/orkhanahmadov/laravel-ip-middleware.svg)](https://github.com/orkhanahmadov/laravel-ip-middleware/blob/master/LICENSE.md)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+[![Build Status](https://img.shields.io/travis/orkhanahmadov/laravel-ip-middleware.svg)](https://travis-ci.org/orkhanahmadov/laravel-ip-middleware)
+#[![Test Coverage](https://api.codeclimate.com/v1/badges/85b8405174a619e906e1/test_coverage)](https://codeclimate.com/github/orkhanahmadov/laravel-ip-middleware/test_coverage)
+#[![Maintainability](https://api.codeclimate.com/v1/badges/85b8405174a619e906e1/maintainability)](https://codeclimate.com/github/orkhanahmadov/laravel-ip-middleware/maintainability)
+[![Quality Score](https://img.shields.io/scrutinizer/g/orkhanahmadov/laravel-ip-middleware.svg)](https://scrutinizer-ci.com/g/orkhanahmadov/laravel-ip-middleware)
+#[![StyleCI](https://github.styleci.io/repos/208126340/shield?branch=master)](https://github.styleci.io/repos/208126340)
 
 ## Installation
 
