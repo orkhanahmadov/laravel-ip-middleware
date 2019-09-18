@@ -23,13 +23,13 @@ class BlacklistMiddlewareTest extends TestCase
         }, '1.1.1.1', '2.2.2.2');
     }
 
-    public function testBlocksWithCloudflareIpAddress()
+    public function testBlocksWithCustomIpVariable()
     {
         $this->expectException(HttpException::class);
-        $request = Request::create('/', 'GET', [], [], [], ['HTTP_CF_CONNECTING_IP' => '2.1.1.1']);
+        app()['config']->set('ip-middleware.custom_server_variable', 'HTTP_CUSTOM_IP');
+        $request = Request::create('/', 'GET', [], [], [], ['HTTP_CUSTOM_IP' => '2.1.1.1']);
 
         $this->middleware->handle($request, function () {
-            return true;
         }, '2.1.1.1');
     }
 

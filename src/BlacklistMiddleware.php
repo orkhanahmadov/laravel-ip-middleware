@@ -19,7 +19,7 @@ class BlacklistMiddleware extends Middleware
      */
     public function handle($request, Closure $next, ...$blacklist)
     {
-        if ($this->shouldCheck() && in_array($this->realIp($request), Arr::flatten($blacklist))) {
+        if ($this->shouldCheck() && in_array($this->clientIp($request), Arr::flatten($blacklist))) {
             $this->application->abort($this->errorCode);
         }
 

@@ -22,9 +22,10 @@ class WhitelistMiddlewareTest extends TestCase
         }, '1.1.1.1', '2.2.2.2');
     }
 
-    public function testAllowsWithCloudflareIpAddress()
+    public function testAllowsWithCustomIpVariable()
     {
-        $request = Request::create('/', 'GET', [], [], [], ['HTTP_CF_CONNECTING_IP' => '2.1.1.1']);
+        app()['config']->set('ip-middleware.custom_server_variable', 'HTTP_CUSTOM_IP');
+        $request = Request::create('/', 'GET', [], [], [], ['HTTP_CUSTOM_IP' => '2.1.1.1']);
 
         $result = $this->middleware->handle($request, function () {
             return true;

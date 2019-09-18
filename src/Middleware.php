@@ -39,9 +39,13 @@ abstract class Middleware
      * @param Request $request
      * @return string
      */
-    protected function realIp($request): string
+    protected function clientIp($request): string
     {
-        return $request->server('HTTP_CF_CONNECTING_IP') ?? $request->ip();
+        if ($serverVariable = $this->config->get('ip-middleware.custom_server_variable')) {
+            return $request->server($serverVariable) ?? $request->ip();
+        }
+
+        return $request->ip();
     }
 
     /**

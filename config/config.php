@@ -27,4 +27,22 @@ return [
     */
 
     'error_code' => Response::HTTP_FORBIDDEN,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Custom server variable
+    |--------------------------------------------------------------------------
+    |
+    | If application uses proxy service like "CloudFlare" then client IP address
+    | will not return real IP address. These services set specific $_SERVER variable
+    | with real client IP address.
+    | You need to set following configuration to that variable name.
+    |
+    | For example,
+    | "CloudFlare" sets special "HTTP_CF_CONNECTING_IP" variable for all incoming requests:
+    | 'custom_server_variable' => 'HTTP_CF_CONNECTING_IP',
+    |
+    */
+
+    'custom_server_variable' => null,
 ];
