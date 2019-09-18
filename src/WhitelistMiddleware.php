@@ -19,7 +19,7 @@ class WhitelistMiddleware extends Middleware
      */
     public function handle($request, Closure $next, ...$whitelist)
     {
-        if ($this->shouldCheck() && !in_array($this->realIp($request), Arr::flatten($whitelist))) {
+        if ($this->shouldCheck() && ! in_array($this->realIp($request), Arr::flatten($whitelist))) {
             $this->application->abort($this->errorCode);
         }
 
