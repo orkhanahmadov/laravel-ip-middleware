@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Arr;
 
-class IpMiddleware
+class WhitelistMiddleware
 {
     /**
      * @var Application
@@ -45,10 +45,10 @@ class IpMiddleware
     {
         $clientIp = $request->server('HTTP_CF_CONNECTING_IP') ?? $request->ip();
 
-        if (! $this->application->environment($this->config->get('ip-middleware.ignore_environments')) &&
-            ! in_array($clientIp, Arr::flatten($allowedIp))
+        if (!$this->application->environment($this->config->get('ip-middleware.ignore_environments')) &&
+            !in_array($clientIp, Arr::flatten($allowedIp))
         ) {
-            abort(Response::HTTP_FORBIDDEN);
+            abort($this->config->get('ip-middleware.error_code'));
         }
 
         return $next($request);

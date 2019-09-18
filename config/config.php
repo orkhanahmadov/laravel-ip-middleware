@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Http\Response;
+
 return [
     /*
     |--------------------------------------------------------------------------
@@ -12,5 +14,7 @@ return [
 
     'ignore_environments' => [
         'local',
-    ]
+    ],
+
+    'error_code' => Response::HTTP_FORBIDDEN,
 ];

@@ -3,22 +3,15 @@
 namespace Orkhanahmadov\LaravelIpMiddleware\Tests;
 
 use Illuminate\Http\Request;
-use Orkhanahmadov\LaravelIpMiddleware\IpMiddleware;
+use Orkhanahmadov\LaravelIpMiddleware\WhitelistMiddleware;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
-class IpMiddlewareTest extends TestCase
+class WhitelistMiddlewareTest extends TestCase
 {
     /**
-     * @var IpMiddleware
+     * @var WhitelistMiddleware
      */
     private $middleware;
-
-    protected function setUp(): void
-    {
-        parent::setUp();
-
-        $this->middleware = $this->app->make(IpMiddleware::class);
-    }
 
     public function testBlocksIfIpIsNotWhitelisted()
     {
@@ -26,7 +19,7 @@ class IpMiddlewareTest extends TestCase
         $request = Request::create('/', 'GET', [], [], [], ['REMOTE_ADDR' => '1.1.1.0']);
 
         $this->middleware->handle($request, function () {
-        }, '1.1.1.1,2.2.2.2');
+        }, '1.1.1.1', '2.2.2.2');
     }
 
     public function testAllowsWithCloudflareIpAddress()
@@ -61,5 +54,12 @@ class IpMiddlewareTest extends TestCase
         }, '1.1.1.1');
 
         $this->assertTrue($result);
+    }
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $this->middleware = $this->app->make(WhitelistMiddleware::class);
     }
 }

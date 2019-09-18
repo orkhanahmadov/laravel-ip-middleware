@@ -25,9 +25,24 @@ composer require orkhanahmadov/laravel-ip-middleware
 
 ## Usage
 
-``` php
-// Usage description here
+Register middleware in `$routeMiddleware` in `app/Http/Kernel.php` file:
+
+```php
+protected $routeMiddleware = [
+    // ...
+    'ip_whitelist' => Orkhanahmadov\LaravelIpMiddleware\WhitelistMiddleware::class,
+];
 ```
+
+Use middleware in any of your routes and pass whitelisted IP address:
+
+```php
+Route::middleware('ip_whitelist:1.1.1.1')->get('/', 'HomeController@index');
+// you can also pass multiple IP addresses with comma:
+Route::middleware('ip_whitelist:1.1.1.1,2.2.2.2')->get('/', 'HomeController@index');
+```
+
+This will block all requests where client IP not matching whitelisted IP list.
 
 ### Testing
 
@@ -55,7 +70,3 @@ If you discover any security related issues, please email ahmadov90@gmail.com in
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
-
-## Laravel Package Boilerplate
-
-This package was generated using the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com).
