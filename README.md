@@ -1,5 +1,3 @@
-# WIP
-
 # Laravel IP middleware
 
 [![Latest Stable Version](https://poser.pugx.org/orkhanahmadov/laravel-ip-middleware/v/stable)](https://packagist.org/packages/orkhanahmadov/laravel-ip-middleware)
@@ -13,7 +11,7 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/orkhanahmadov/laravel-ip-middleware.svg)](https://scrutinizer-ci.com/g/orkhanahmadov/laravel-ip-middleware)
 [![StyleCI](https://github.styleci.io/repos/209357635/shield?branch=master)](https://github.styleci.io/repos/209357635)
 
-Laravel middleware for whitelisting incoming client IP addresses
+Laravel middleware for whitelisting/blacklisting client IP addresses
 
 ## Installation
 
@@ -25,21 +23,32 @@ composer require orkhanahmadov/laravel-ip-middleware
 
 ## Usage
 
-Register middleware in `$routeMiddleware` in `app/Http/Kernel.php` file:
+Packages comes with `WhitelistMiddleware` and `BlacklistMiddleware` middlewares.
+You can register any or both of them in `$routeMiddleware` in `app/Http/Kernel.php` file:
 
 ```php
 protected $routeMiddleware = [
     // ...
     'ip_whitelist' => Orkhanahmadov\LaravelIpMiddleware\WhitelistMiddleware::class,
+    'ip_blacklist' => Orkhanahmadov\LaravelIpMiddleware\BlacklistMiddleware::class,
 ];
 ```
 
-Use middleware in any of your routes and pass whitelisted IP address:
+Use middlewares in any of your routes and pass IP addresses.
 
 ```php
 Route::middleware('ip_whitelist:1.1.1.1')->get('/', 'HomeController@index');
-// you can also pass multiple IP addresses with comma:
+Route::middleware('ip_blacklist:3.3.3.3')->get('/', 'PostController@index');
+```
+
+* `ip_whitelist` middleware will block any requests where incoming client IP not matching with whitelisted IPs.
+* `ip_backlist` middleware will block requests coming from blacklisted IPs.
+
+You can also pass multiple IP addresses separated with comma:
+
+```php
 Route::middleware('ip_whitelist:1.1.1.1,2.2.2.2')->get('/', 'HomeController@index');
+Route::middleware('ip_blacklist:3.3.3.3,4.4.4.4')->get('/', 'PostController@index');
 ```
 
 This will block all requests where client IP not matching whitelisted IP list.
