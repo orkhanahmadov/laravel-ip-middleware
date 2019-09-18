@@ -3,8 +3,8 @@
 namespace Orkhanahmadov\LaravelIpMiddleware\Tests;
 
 use Illuminate\Http\Request;
-use Orkhanahmadov\LaravelIpMiddleware\BlacklistMiddleware;
 use Symfony\Component\HttpKernel\Exception\HttpException;
+use Orkhanahmadov\LaravelIpMiddleware\BlacklistMiddleware;
 use Orkhanahmadov\LaravelIpMiddleware\WhitelistMiddleware;
 
 class BlacklistMiddlewareTest extends TestCase

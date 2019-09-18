@@ -2,10 +2,10 @@
 
 namespace Orkhanahmadov\LaravelIpMiddleware;
 
-use Illuminate\Contracts\Config\Repository;
-use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Contracts\Config\Repository;
+use Illuminate\Contracts\Foundation\Application;
 
 abstract class Middleware
 {
@@ -51,6 +51,6 @@ abstract class Middleware
      */
     protected function shouldCheck(): bool
     {
-        return !$this->application->environment($this->config->get('ip-middleware.ignore_environments'));
+        return ! $this->application->environment($this->config->get('ip-middleware.ignore_environments'));
     }
 }
