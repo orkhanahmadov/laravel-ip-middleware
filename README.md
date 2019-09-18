@@ -1,15 +1,19 @@
 # WIP
 
+# Laravel IP middleware
+
 [![Latest Stable Version](https://poser.pugx.org/orkhanahmadov/laravel-ip-middleware/v/stable)](https://packagist.org/packages/orkhanahmadov/laravel-ip-middleware)
 [![Latest Unstable Version](https://poser.pugx.org/orkhanahmadov/laravel-ip-middleware/v/unstable)](https://packagist.org/packages/orkhanahmadov/laravel-ip-middleware)
 [![Total Downloads](https://img.shields.io/packagist/dt/orkhanahmadov/laravel-ip-middleware)](https://packagist.org/packages/orkhanahmadov/laravel-ip-middleware)
 [![License](https://img.shields.io/github/license/orkhanahmadov/laravel-ip-middleware.svg)](https://github.com/orkhanahmadov/laravel-ip-middleware/blob/master/LICENSE.md)
 
 [![Build Status](https://img.shields.io/travis/orkhanahmadov/laravel-ip-middleware.svg)](https://travis-ci.org/orkhanahmadov/laravel-ip-middleware)
-#[![Test Coverage](https://api.codeclimate.com/v1/badges/85b8405174a619e906e1/test_coverage)](https://codeclimate.com/github/orkhanahmadov/laravel-ip-middleware/test_coverage)
-#[![Maintainability](https://api.codeclimate.com/v1/badges/85b8405174a619e906e1/maintainability)](https://codeclimate.com/github/orkhanahmadov/laravel-ip-middleware/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/57f7522d9788782e3246/test_coverage)](https://codeclimate.com/github/orkhanahmadov/laravel-ip-middleware/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/57f7522d9788782e3246/maintainability)](https://codeclimate.com/github/orkhanahmadov/laravel-ip-middleware/maintainability)
 [![Quality Score](https://img.shields.io/scrutinizer/g/orkhanahmadov/laravel-ip-middleware.svg)](https://scrutinizer-ci.com/g/orkhanahmadov/laravel-ip-middleware)
-#[![StyleCI](https://github.styleci.io/repos/208126340/shield?branch=master)](https://github.styleci.io/repos/208126340)
+[![StyleCI](https://github.styleci.io/repos/209357635/shield?branch=master)](https://github.styleci.io/repos/209357635)
+
+Laravel middleware for whitelisting incoming client IP addresses
 
 ## Installation
 
