@@ -41,8 +41,8 @@ Route::middleware('ip_whitelist:1.1.1.1')->get('/', 'HomeController@index');
 Route::middleware('ip_blacklist:3.3.3.3')->get('/', 'PostController@index');
 ```
 
-* `ip_whitelist` middleware will block any requests where incoming client IP not matching with whitelisted IPs.
-* `ip_backlist` middleware will block requests coming from blacklisted IPs.
+* `ip_whitelist` middleware will block any requests where client IP not matching with whitelisted IPs.
+* `ip_blacklist` middleware will block requests coming from blacklisted IPs.
 
 You can also pass multiple IP addresses separated with comma:
 
