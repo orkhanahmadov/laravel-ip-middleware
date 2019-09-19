@@ -54,30 +54,38 @@ abstract class Middleware
     /**
      * Returns IP address list parsed from original middleware parameter.
      *
-     * @param array $list
+     * @param array<string> $list
      *
-     * @return array
+     * @return array<string>
      */
     protected function ipList(array $list): array
     {
-        $originalList = Arr::flatten($list);
         $predefinedLists = $this->config->get('ip-middleware.predefined_lists');
 
         $finalList = [];
-        foreach ($originalList as $item) {
-            if (! isset($predefinedLists[$item])) {
-                $finalList[] = $item;
+        foreach (Arr::flatten($list) as $item) {
+            if (isset($predefinedLists[$item])) {
+                $finalList[] = $this->parsePredefinedListItem($predefinedLists[$item]);
             } else {
-                if (is_array($predefinedLists[$item])) {
-                    $ipAddresses = $predefinedLists[$item];
-                } else {
-                    $ipAddresses = explode(',', $predefinedLists[$item]);
-                }
-                $finalList[] = $ipAddresses;
+                $finalList[] = $item;
             }
         }
 
         return Arr::flatten($finalList);
+    }
+
+    /**
+     * @param array<string>|string $item
+     *
+     * @return array<string>
+     */
+    private function parsePredefinedListItem($item): array
+    {
+        if (is_array($item)) {
+            return $item;
+        }
+
+        return explode(',', $item);
     }
 
     /**
