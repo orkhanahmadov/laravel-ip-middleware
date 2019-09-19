@@ -65,9 +65,9 @@ Package also allows setting predefine IP list in config and use them with name:
 ```
 
 ```php
-Route::middleware('ip_whitelist:my-list,my-list-2')->get('/', 'HomeController@index');
+Route::middleware('ip_whitelist:my-list-1,my-list-2')->get('/', 'HomeController@index');
 // you can also mix predefined list with additional IP addresses
-Route::middleware('ip_whitelist:my-list,my-list-2,5.5.5.5,6.6.6.6')->get('/', 'PostController@index');
+Route::middleware('ip_whitelist:my-list-1,my-list-2,5.5.5.5,6.6.6.6')->get('/', 'PostController@index');
 ```
 
 ## Configuration
