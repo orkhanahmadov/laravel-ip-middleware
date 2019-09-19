@@ -61,18 +61,17 @@ abstract class Middleware
     protected function ipList(array $list): array
     {
         $originalList = Arr::flatten($list);
-        $preconfiguredLists = $this->config->get('ip-middleware.lists');
+        $predefinedLists = $this->config->get('ip-middleware.predefined_lists');
 
         $finalList = [];
-
         foreach ($originalList as $item) {
-            if (! isset($preconfiguredLists[$item])) {
+            if (! isset($predefinedLists[$item])) {
                 $finalList[] = $item;
             } else {
-                if (is_array($preconfiguredLists[$item])) {
-                    $ipAddresses = $preconfiguredLists[$item];
+                if (is_array($predefinedLists[$item])) {
+                    $ipAddresses = $predefinedLists[$item];
                 } else {
-                    $ipAddresses = explode(',', $preconfiguredLists[$item]);
+                    $ipAddresses = explode(',', $predefinedLists[$item]);
                 }
                 $finalList[] = $ipAddresses;
             }

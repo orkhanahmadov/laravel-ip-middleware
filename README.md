@@ -53,6 +53,23 @@ Route::middleware('ip_blacklist:3.3.3.3,4.4.4.4')->get('/', 'PostController@inde
 
 This will block all requests where client IP not matching whitelisted IP list.
 
+Package also allows setting predefine IP list in config and use them with name:
+
+```php
+// config/ip-middleware.php
+
+'predefined_lists' = [
+    'my-list-1' => ['1.1.1.1', '2.2.2.2'],
+    'my-list-2' => ['3.3.3.3', '4.4.4.4'],
+];
+```
+
+```php
+Route::middleware('ip_whitelist:my-list,my-list-2')->get('/', 'HomeController@index');
+// you can also mix predefined list with additional IP addresses
+Route::middleware('ip_whitelist:my-list,my-list-2,5.5.5.5,6.6.6.6')->get('/', 'PostController@index');
+```
+
 ## Configuration
 
 Run this command to publish package config file:
@@ -65,7 +82,8 @@ php artisan vendor:publish --provider="Orkhanahmadov\LaravelIpMiddleware\Laravel
 
 * `ignore_environments` - Middleware ignores IP checking when application is running in listed environments.
 * `error_code` - HTTP code that shown when request gets rejected.
-* `custom_server_parameter` - Custom $_SERVER variable to look for IP address
+* `custom_server_parameter` - Custom $_SERVER parameter to look for IP address
+* `predefined_lists` - Predefined IP lists
 
 ### Testing
 

@@ -72,9 +72,9 @@ class WhitelistMiddlewareTest extends TestCase
         $this->assertTrue($result);
     }
 
-    public function testAllowsWithPreconfiguredLists()
+    public function testAllowsWithPredefinedLists()
     {
-        config()->set('ip-middleware.lists', [
+        config()->set('ip-middleware.predefined_lists', [
             'list-1' => '1.1.1.1,2.2.2.2',
             'list-2' => ['3.3.3.3', '4.4.4.4'],
             'list-3' => '5.5.5.5',

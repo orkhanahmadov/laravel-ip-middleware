@@ -58,16 +58,16 @@ class BlacklistMiddlewareTest extends TestCase
         $this->assertTrue($result);
     }
 
-    public function testBlocksWithPreconfiguredLists()
+    public function testBlocksWithPredefinedLists()
     {
         $this->expectException(HttpException::class);
 
-        config()->set('ip-middleware.lists', [
+        config()->set('ip-middleware.predefined_lists', [
             'list-1' => '1.1.1.1,2.2.2.2',
             'list-2' => ['3.3.3.3', '4.4.4.4'],
             'list-3' => '5.5.5.5',
         ]);
-        $request = Request::create('/', 'GET', [], [], [], ['REMOTE_ADDR' => '4.4.4.4']);
+        $request = Request::create('/', 'GET', [], [], [], ['REMOTE_ADDR' => '2.2.2.2']);
 
         $this->middleware->handle($request, function () {
         }, 'list-1', 'list-2', 'list-3');

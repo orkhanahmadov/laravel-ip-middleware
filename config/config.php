@@ -18,10 +18,10 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Error code
+    | HTTP error code
     |--------------------------------------------------------------------------
     |
-    | Error code when request gets rejected.
+    | HTTP error code when request gets rejected.
     | Default is 403 (Forbidden).
     |
     */
@@ -49,16 +49,16 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Preconfigured IP list
+    | Predefined IP lists
     |--------------------------------------------------------------------------
     |
-    | Here you can preconfigure IP list that middleware can use with list key name.
+    | Here you can predefine IP list that middleware can use with list key name.
     | You can use array list or comma separated string to set IP addresses.
     | Or you can use environment key.
     |
     */
 
-    'lists' => [
+    'predefined_lists' => [
 //        'list-1' => ['1.1.1.1', '2.2.2.2'],
 //        'list-2' => '3.3.3.3,4.4.4.4',
 //        'list-3' => env('IP_WHITELIST'), // in .env file: IP_WHITELIST=5.5.5.5,6.6.6.6,7.7.7.7
