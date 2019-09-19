@@ -3,7 +3,6 @@
 namespace Orkhanahmadov\LaravelIpMiddleware;
 
 use Closure;
-use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
 
 class BlacklistMiddleware extends Middleware
@@ -19,8 +18,8 @@ class BlacklistMiddleware extends Middleware
      */
     public function handle($request, Closure $next, ...$blacklist)
     {
-        if ($this->shouldCheck() && in_array($this->clientIp($request), Arr::flatten($blacklist))) {
-            $this->application->abort($this->errorCode);
+        if ($this->shouldCheck() && in_array($this->clientIp($request), $this->ipList($blacklist))) {
+            $this->abort();
         }
 
         return $next($request);
