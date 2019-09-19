@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Http\Response;
-
 return [
     /*
     |--------------------------------------------------------------------------
@@ -26,7 +24,7 @@ return [
     |
     */
 
-    'error_code' => Response::HTTP_FORBIDDEN,
+    'error_code' => Illuminate\Http\Response::HTTP_FORBIDDEN,
 
     /*
     |--------------------------------------------------------------------------
