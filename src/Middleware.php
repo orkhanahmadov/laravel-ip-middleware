@@ -2,10 +2,10 @@
 
 namespace Orkhanahmadov\LaravelIpMiddleware;
 
+use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Support\Arr;
 
 abstract class Middleware
 {
