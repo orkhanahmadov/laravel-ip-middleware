@@ -22,9 +22,9 @@ class WhitelistMiddlewareTest extends TestCase
         }, '1.1.1.1', '2.2.2.2');
     }
 
-    public function testAllowsWithCustomIpVariable()
+    public function testAllowsWithCustomIpParameter()
     {
-        app()['config']->set('ip-middleware.custom_server_variable', 'HTTP_CUSTOM_IP');
+        app()['config']->set('ip-middleware.custom_server_parameter', 'HTTP_CUSTOM_IP');
         $request = Request::create('/', 'GET', [], [], [], ['HTTP_CUSTOM_IP' => '2.1.1.1']);
 
         $result = $this->middleware->handle($request, function () {

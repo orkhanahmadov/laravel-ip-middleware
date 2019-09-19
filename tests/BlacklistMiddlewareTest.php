@@ -23,10 +23,10 @@ class BlacklistMiddlewareTest extends TestCase
         }, '1.1.1.1', '2.2.2.2');
     }
 
-    public function testBlocksWithCustomIpVariable()
+    public function testBlocksWithCustomIpParameter()
     {
         $this->expectException(HttpException::class);
-        app()['config']->set('ip-middleware.custom_server_variable', 'HTTP_CUSTOM_IP');
+        app()['config']->set('ip-middleware.custom_server_parameter', 'HTTP_CUSTOM_IP');
         $request = Request::create('/', 'GET', [], [], [], ['HTTP_CUSTOM_IP' => '2.1.1.1']);
 
         $this->middleware->handle($request, function () {

@@ -65,7 +65,7 @@ php artisan vendor:publish --provider="Orkhanahmadov\LaravelIpMiddleware\Laravel
 
 * `ignore_environments` - Middleware ignores IP checking when application is running in listed environments.
 * `error_code` - HTTP code that shown when request gets rejected.
-* `custom_server_variable` - Custom $_SERVER variable to look for IP address
+* `custom_server_parameter` - Custom $_SERVER variable to look for IP address
 
 ### Testing
 

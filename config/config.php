@@ -30,19 +30,20 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Custom server variable
+    | Custom server parameter
     |--------------------------------------------------------------------------
     |
-    | If application uses proxy service like "CloudFlare" then client IP address
-    | will not return real IP address. These services set specific $_SERVER variable
-    | with real client IP address.
-    | You need to set following configuration to that variable name.
+    | By default, if this configuration value is set to null middleware will use
+    | $_SERVER['REMOTE_ADDR'] parameter to get client IP. If you want to get IP
+    | address from different $_SERVER parameter you can set it here.
     |
-    | For example,
-    | "CloudFlare" sets special "HTTP_CF_CONNECTING_IP" variable for all incoming requests:
-    | 'custom_server_variable' => 'HTTP_CF_CONNECTING_IP',
+    | For example, if application is behind "CloudFlare" proxy, then 'REMOTE_ADDR'
+    | won't return real client IP, instead CloudFlare sets special
+    | $_SERVER['HTTP_CF_CONNECTING_IP'] parameter. You need to set following
+    | configuration to that parameter name.
+    | 'custom_server_parameter' => 'HTTP_CF_CONNECTING_IP',
     |
     */
 
-    'custom_server_variable' => null,
+    'custom_server_parameter' => null,
 ];
