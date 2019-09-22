@@ -29,8 +29,8 @@ You can register any or both of them in `$routeMiddleware` in `app/Http/Kernel.p
 ```php
 protected $routeMiddleware = [
     // ...
-    'ip_whitelist' => Orkhanahmadov\LaravelIpMiddleware\WhitelistMiddleware::class,
-    'ip_blacklist' => Orkhanahmadov\LaravelIpMiddleware\BlacklistMiddleware::class,
+    'ip_whitelist' => \Orkhanahmadov\LaravelIpMiddleware\WhitelistMiddleware::class,
+    'ip_blacklist' => \Orkhanahmadov\LaravelIpMiddleware\BlacklistMiddleware::class,
 ];
 ```
 
