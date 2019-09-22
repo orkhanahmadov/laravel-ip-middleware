@@ -15,9 +15,6 @@ env:
 
 matrix:
     fast_finish: true
-    exclude:
-        - php: 7.1
-          env: LARAVEL=6.*   TESTBENCH=4.*   PHPUNIT=8.*
     allow_failures:
         - php: 7.4snapshot
 
@@ -25,12 +22,14 @@ cache:
     directories:
         - $HOME/.composer/cache
 
-before_script:
+before_install:
     - travis_retry composer self-update
-    - travis_retry composer install --no-interaction
     - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
     - chmod +x ./cc-test-reporter
     - ./cc-test-reporter before-build
+
+install:
+    - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction
 
 script:
     - vendor/bin/phpunit --coverage-text --coverage-clover build/logs/clover.xml
