@@ -15,8 +15,8 @@ Laravel middleware for whitelisting/blacklisting client IP addresses
 
 ## Requirements
 
-* PHP 7.1 or higher
-* Laravel 5.8 or higher
+* PHP **7.2** or higher
+* Laravel **5.8** or higher
 
 ## Installation
 
