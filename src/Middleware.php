@@ -38,7 +38,9 @@ abstract class Middleware
      */
     protected function clientIp($request): string
     {
-        return $request->server->get($this->config->get('ip-middleware.custom_server_parameter')) ?? $request->ip();
+        return $this->config->get('ip-middleware.custom_server_parameter')
+            ? $request->server->get($this->config->get('ip-middleware.custom_server_parameter'))
+            : $request->ip();
     }
 
     /**

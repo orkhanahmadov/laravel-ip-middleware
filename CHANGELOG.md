@@ -2,6 +2,11 @@
 
 All notable changes to `laravel-ip-middleware` will be documented in this file
 
+## 1.4.0 - 2020-03-03
+
+- Added support for Laravel 7
+- Dropped support for Laravel 5.8
+
 ## 1.3.0 - 2020-02-12
 
 - Added support for PHP 7.4
