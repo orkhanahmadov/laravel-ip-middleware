@@ -16,7 +16,7 @@ class LaravelIpMiddlewareServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../config/config.php' => config_path('ip-middleware.php'),
+                __DIR__ . '/../config/config.php' => config_path('ip-middleware.php'),
             ], 'config');
         }
     }
@@ -26,6 +26,6 @@ class LaravelIpMiddlewareServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'ip-middleware');
+        $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'ip-middleware');
     }
 }
