@@ -53,7 +53,6 @@ You can also pass multiple IP addresses separated with comma:
 
 ```php
 Route::middleware('ip_whitelist:1.1.1.1,2.2.2.2')->get('/', 'HomeController@index');
-Route::middleware('ip_blacklist:3.3.3.3,4.4.4.4')->get('/', 'PostController@index');
 ```
 
 This will block all requests where client IP not matching whitelisted IP list.
