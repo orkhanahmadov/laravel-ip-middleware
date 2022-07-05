@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-ip-middleware` will be documented in this file
 
+## 1.7.0 - 2022-07-05
+
+- Laravel 9 support
+
 ## 1.6.0 - 2021-12-17
 
 - Dropped support for PHP 7.2
