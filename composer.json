@@ -22,13 +22,13 @@
     ],
     "require": {
         "php": "^8.0",
-        "illuminate/contracts": "^8.0|^9.0|^10.0|^11.0|^12.0",
-        "illuminate/http": "^8.0|^9.0|^10.0|^11.0|^12.0",
-        "illuminate/support": "^8.0|^9.0|^10.0|^11.0|^12.0"
+        "illuminate/contracts": "^8.0|^9.0|^10.0|^11.0|^12.0|^13.0",
+        "illuminate/http": "^8.0|^9.0|^10.0|^11.0|^12.0|^13.0",
+        "illuminate/support": "^8.0|^9.0|^10.0|^11.0|^12.0|^13.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^5.0|^6.0|^7.0|^10.0",
-        "phpunit/phpunit": "^8.0|^9.0|^10.0|^11.5.3"
+        "orchestra/testbench": "^5.0|^6.0|^7.0|^10.0|^11.0",
+        "phpunit/phpunit": "^8.0|^9.0|^10.0|^11.5.3|^12.5.12"
     },
     "autoload": {
         "psr-4": {
